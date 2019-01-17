@@ -30,7 +30,7 @@ app.post('/find', (req, res) => {
     let list = findWords(req.body.name); //returned list of matched words
     // res.send(list);
     if (list.length >= 1) {
-        res.send(list)
+        res.send(list)                   // currently sending the whole array itself
     } else {
         res.send('No matches found. Why not go back and try again?')
     }
@@ -38,7 +38,7 @@ app.post('/find', (req, res) => {
 
 app.use((err, req, res, next) => {
     console.error(err.stack);
-    fs.appendFile('error.txt', err.stack, (err) => {        
+    fs.appendFile('error.txt', err.stack, (err) => {        // logging errors in a file
         if (err) throw err;
     })
     res.status(500).send('Oops! Something went wrong ¯\_(ツ)_/¯. It\'s probably not your fault tho!');
