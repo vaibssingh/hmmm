@@ -36,7 +36,7 @@ app.post('/find', (req, res) => {
     }
 });
 
-app.use((err, req, res, next) => {
+app.use((err, res) => {
     console.error(err.stack);
     fs.appendFile('error.txt', err.stack, (err) => {        // logging errors in a file
         if (err) throw err;
