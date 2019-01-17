@@ -28,7 +28,6 @@ app.post('/insert', (req, res) => {
 // Path to show result of matched words
 app.post('/find', (req, res) => {
     let list = findWords(req.body.name); //returned list of matched words
-    // res.send(list);
     if (list.length >= 1) {
         res.send(list)                   // currently sending the whole array itself
     } else {
