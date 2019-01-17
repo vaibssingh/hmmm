@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Trie implementation in Node</title>
+</head>
+
+<body>
+    Do or do not, there is no Trie - Vaibhav Singh, 2019 AD
+    Also, please enter your list of words below
+    <form name="name" action="/insert" method="POST">
+<input type="text" placeholder="Only comma spaced small letters allowed" name="inputField" pattern="[a-z]+\,[a-z]+" title="Only comma spaced chars allowed"
+            onsubmit="return validate()">
+        <button type="submit">Submit</button>
+
+    </form>
+
+</body>
+
+</html>
+
+<script>
+    function validate() {
+        if (document.forms["name"]["inputField"].value == "") {
+            alert("Enter a name");
+            document.forms["name"].focus();
+            return false;
+        }
+        if (!/^[a-z\s]+\,[a-z\s]+$/g.test(document.forms["name"]["inputField"].value)) {
+            alert("Invalid characters");
+            document.forms["name"].focus();
+            return false;
+        }
+    }
+</script>

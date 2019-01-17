@@ -1,0 +1,15 @@
+{
+  "name": "autocomplete",
+  "version": "1.0.0",
+  "description": "NodeJS + Express implementation of Tries to find matching words",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vaibhav Singh",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4"
+  }
+}
